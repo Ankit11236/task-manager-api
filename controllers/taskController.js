@@ -18,9 +18,9 @@ async function getTasks(req, res, next) {
       file: null,
     });
   }
-  // if (userRole === "admin") {
+  if (userRole === "admin") {
     return res.json({ data: tasks });
-  // }
+  }
   return res.json({ data: tasks.filter((task) => task.userId === userId) });
 }
 
